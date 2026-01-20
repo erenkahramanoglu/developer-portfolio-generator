@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio Generator</title>
+    <link rel="stylesheet" href="Developer_Portfolio_Generator.css">
+</head> 
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>✨ Developer Portfolio Generator</h1>
+            <p style="color: black;font-family: sans-serif;font-style: italic;font-size: 20px;">Profesyonel portföyünüzü
+                birkaç dakikada oluşturun</p>
+        </header>
+
+        <div class="middle">
+            <div class="text">📋 Kişisel Bilgiler</div>
+            <hr>
+            <div class="form-grid">
+                <div>
+                    <label>Ad Soyad</label>
+                    <input type="text" id="adsoyad" placeholder="Örn: Eren Kahraman">
+                </div>
+                <div>
+                    <label>Ünvan</label>
+                    <input type="text" id="unvan" placeholder="Frontend Developer">
+                </div>
+                <div>
+                    <label>E-posta</label>
+                    <input type="email" id="email" placeholder="mail@example.com">
+                </div>
+                <div>
+                    <label>Telefon</label>
+                    <input type="text" id="telefon" placeholder="+90 555 000 00 00">
+                </div>
+                <div>
+                    <label>GitHub</label>
+                    <input type="text" id="github" placeholder="github.com/username">
+                </div>
+                <div>
+                    <label>LinkedIn</label>
+                    <input type="text" id="linkedin" placeholder="linkedin.com/in/username">
+                </div>
+                <div>
+                    <label>Yetenekler</label>
+                    <input type="text" id="beceriler" placeholder="HTML, CSS, JS(lütfen virgülle ayırın)">
+                </div>
+                <div class="hakkimda">
+                    <label>Hakkımda</label>
+                    <textarea id="hakkimda"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="down">
+            <div class="project">🚀 Projeler</div>
+            <hr>
+
+            <div id="projectsContainer">
+                <div class="project-two">
+                    <div class="title-two">
+                        <h3>Proje 1</h3>
+                        <button class="delete" onclick="sil(this)">Kaldır</button>
+                    </div>
+
+                    <div class="project-row">
+                        <div class="project-field">
+                            <label>Proje Adı</label>
+                            <input type="text" class="projeadi" placeholder="Proje adını girin">
+                        </div>
+
+                        <div class="project-field">
+                            <label>Proje URL</label>
+                            <input type="text" class="projeyol" placeholder="https://projeniz.com">
+                        </div>
+                    </div>
+
+                    <div class="project-desc">
+                        <label>Açıklama</label>
+                        <textarea class="projeaciklama" placeholder="Proje açıklaması..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <button class="newProject" onclick="yeniProjeEkle()">+ YENİ PROJE EKLE</button>
+        </div>
+
+        <div class="alt">
+            <div class="tema">🎨 Tema Ayarları</div>
+            <hr>
+            <select id="tema">
+                <option value="modern">Modern</option>
+                <option value="minimal">Minimal</option>
+                <option value="yaratici">Yaratıcı</option>
+                <option value="profesyonel">Profesyonel</option>
+            </select>
+            <div class="buttons">
+                <button class="generate" onclick="olustur()">PORTFÖY OLUŞTUR</button>
+                <buttons class="download" onclick="önizle()">ÖNİZLE</buttons>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="sonuc"></div>
+    <br><br><br>
+
+    <div class="footer">
+        <p>Oluşturan Eren Kahramanoğlu © 2026</p>
+    </div>
+
+    <script src="Developer_Portfolio_Generator.js"></script>
+</body>
+
+</html>

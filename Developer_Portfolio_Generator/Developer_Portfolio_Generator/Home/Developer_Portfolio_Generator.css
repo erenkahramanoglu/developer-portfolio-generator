@@ -1,0 +1,376 @@
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6ff;
+            background: url(image.png)center/cover no-repeat;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);
+            backdrop-filter: saturate(180%) blur(8px);
+            -webkit-backdrop-filter: saturate(180%) blur(8px);
+        }
+
+        header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 42px;
+        }
+
+        .text,
+        .project,
+        .tema {
+            font-size: 28px;
+            color: #2d6a4f;
+            border-left: 6px solid #52b788;
+        }
+
+        .middle {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .middle:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .form-grid div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-grid input,
+        .form-grid textarea {
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .hakkimda {
+            grid-column: 1 / -1;
+        }
+
+        .form-grid textarea {
+            height: 140px;
+        }
+
+        .down {
+            margin-top: 60px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); */
+        }
+
+        .down:hover {
+            transform: translateY(-8px);
+            /* box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25); */
+        }
+
+        .project-two {
+            width: 100%;
+            background-color: #fff;
+            border-radius: 20px;
+            border-left: 6px solid #6a7cff;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+
+        .title-two {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete {
+            background: linear-gradient(135deg, #e76f51, #f4a261);
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .project-row {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .project-field {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-field input {
+            height: 45px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            padding: 0 15px;
+        }
+
+        .project-desc {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-desc textarea {
+            height: 120px;
+            border-radius: 14px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            resize: none;
+        }
+
+        .newProject {
+            margin-top: 20px;
+            width: 240px;
+            height: 50px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(135deg, #52b788, #40916c);
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .alt {
+            margin-top: 80px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .alt:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        .alt select {
+            width: 50%;
+            height: 45px;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            display: flex;
+            width: 400px;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            gap: 20px;
+        }
+
+        .generate {
+            background: linear-gradient(135deg, #1b4965, #5fa8d3);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 10px;
+        }
+
+        .download {
+            background: linear-gradient(135deg, #8b7355, #a68a64);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 12px 20px;
+            border-radius: 10px;
+        }
+
+        #sonuc p,
+        #sonuc h2,
+        #sonuc strong {
+            color: black;
+        }
+        #sonuc p {
+            margin-left: 20px;
+            color: black;
+        }
+        #sonuc {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            overflow: hidden;
+            border-radius: 15px;
+            justify-content: center;
+            background-color: #f4f6ff;
+            width: 80%;
+            margin: auto;
+            height: auto;
+        }
+
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .footer p {
+            margin-top: -3px;
+        }
+
+
+        .middle,
+        .down,
+        .alt,
+        .header {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .header {
+            animation-delay: 0.2s;
+        }
+
+        .middle {
+            animation-delay: 0.4s;
+        }
+
+        .down {
+            animation-delay: 0.6s;
+        }
+
+        .alt {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .middle,
+        .alt,
+        .project-two {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+
+        @media (max-width: 768px) {
+
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+                text-align: center;
+            }
+
+            .header p {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .form-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .hakkimda textarea {
+                min-height: 120px;
+            }
+
+            .project-two {
+                padding: 15px;
+            }
+
+            .project-row {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .alt {
+                text-align: center;
+            }
+
+            .buttons {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                margin-top: 15px;
+            }
+
+            .buttons button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .newProject {
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            .footer {
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+
+        .hakkimda-yazı {
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        @media (max-width: 768px) {
+
+            .alt {
+                padding: 20px;
+                margin-top: 50px;
+            }
+        }

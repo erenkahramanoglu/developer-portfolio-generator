@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --gold: #e94560;
+            --text: #f1f1f1;
+            --text-dim: #a8a8a8;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            padding-top: 80px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(233, 69, 96, 0.1);
+            z-index: 1000;
+        }
+
+        header p {
+            font-size: 25px;
+            padding-left: 90px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .as {
+            width: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .level {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff6b9d;
+            color: white;
+            border: 1px solid #ff6b9d;
+            border-radius: 16px;
+            margin-left: 40px;
+            margin-top: 30px;
+            width: 220px;
+            height: 35px;
+        }
+
+        .container {
+            width: 50%;
+            margin-left: 40px;
+        }
+
+        .container h1 {
+            font-size: 85px;
+        }
+
+        .container p {
+            font-size: 25px;
+            color: gray;
+            margin-top: -20px;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 35px;
+            font-weight: bold;
+            color: #ff6b9d;
+        }
+
+        .stat-label {
+            color: gray;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .button1 {
+            color: #fff;
+            background-color: #ff6b9d;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            width: 200px;
+            height: 65px;
+            border: 2px solid #e94560;
+            border-radius: 10px;
+            transition: all ease 0.50s;
+        }
+
+        .button1:hover {
+            background-color: #1a1a2e;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            transform: translateY(-1px) scale(1.05);
+            cursor: pointer;
+        }
+
+        .button2 {
+            background-color: #1a1a2e;
+            color: #fff;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            width: 220px;
+            height: 65px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: all ease 0.50s;
+        }
+
+        .button2:hover {
+            border-color: #f1f1f1;
+            transform: translateY(-1px) scale(1.05);
+            cursor: pointer;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: column;
+            margin-left: 40px;
+            margin-top: 150px;
+        }
+
+        .section-label {
+            color: #e94560;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: #a8a8a8;
+            max-width: 700px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: #16213e;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(233, 69, 96, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: #e94560;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.2);
+        }
+
+        .skill-category-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #e94560;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: rgba(233, 69, 96, 0.1);
+            color: #f1f1f1;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #e94560;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: #16213e;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(233, 69, 96, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .container-two {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            padding: 50px;
+            padding-left: 0;
+            margin-left: 40px;
+        }
+
+        .mom {
+            display: flex;
+            flex-direction: column;
+            background-color: #16213e;
+            border-radius: 16px;
+            height: 100%;
+            transition: all ease 1s;
+        }
+
+        .mom:hover {
+            transform: translateY(-0.5px);
+            box-shadow: 0 10px 40px #ff6b9d;
+            overflow: hidden;
+        }
+
+        .mom::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background: #ff6b9d;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.9s ease;
+        }
+
+        .mom:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mom::before {
+            transform-origin: right;
+        }
+
+        .mom:hover::before {
+            transform-origin: left;
+        }
+
+        .up {
+            min-height: 220px;
+            width: 100%;
+            font-size: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .down {
+            display: flex;
+            flex-direction: column;
+            padding: 32px;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .project-description {
+            color: #a8a8a8;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-badge {
+            background: rgba(233, 69, 96, 0.1);
+            color: #ff6b9d;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            color: #ff6b9d;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(233, 69, 96, 0.1);
+            color: var(--text);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--gold);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .project-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 10px;
+        }
+
+        .contact-card {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(233, 69, 96, 0.1);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.2);
+        }
+
+        .section-header-two {
+            margin-left: 40px;
+            margin-top: 150px;
+        }
+
+        .control {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 50px;
+            margin-left: 40px;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #16213e;
+            border-radius: 16px;
+            min-height: 220px;
+            padding: 30px;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(233, 69, 96, 0.1);
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b9d;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.2);
+        }
+
+        .footer {
+            display: flex;
+            background-color: #16213e;
+            color: #9a9a9a;
+            height: 80px;
+            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #level,
+        #middle,
+        #section-header-two,
+        #control {
+            scroll-margin-top: 90px;
+        }
+
+        @media (max-width: 768px) {
+
+            header {
+                position: static;
+                padding: 15px;
+            }
+
+            header p {
+                font-size: 18px;
+                padding-left: 10px;
+            }
+
+            .as {
+                width: 100%;
+                gap: 10px;
+                font-size: 14px;
+            }
+
+            .level {
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .container {
+                width: 90%;
+                margin-left: 20px;
+            }
+
+            .container h1 {
+                font-size: 40px;
+            }
+
+            .container p {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .stat {
+                gap: 5px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .stat-label {
+                font-size: 14px;
+            }
+
+            .middle {
+                width: 90%;
+                padding: 20px;
+                margin-left: 20px;
+            }
+
+            .middle h2 {
+                font-size: 32px;
+            }
+
+            .skill-tag {
+                font-size: 13px;
+                padding: 6px 12px;
+            }
+
+            .section-header-two {
+                margin-left: 20px;
+                margin-top: 40px;
+            }
+
+            .section-header-two h2 {
+                font-size: 32px;
+            }
+
+            .container-two {
+                width: 90%;
+                padding: 20px;
+                margin-left: 20px;
+                grid-template-columns: 1fr;
+            }
+
+            .mom {
+                padding: 20px;
+            }
+
+            .control {
+                width: 90%;
+                padding: 20px;
+                margin-left: 20px;
+                grid-template-columns: 1fr;
+            }
+
+            .box {
+                min-height: 180px;
+                padding: 20px;
+            }
+
+            .footer {
+                font-size: 14px;
+                padding: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>Ek.</p>
+        <div class="as"> <a href="#level">Ana Sayfa</a> <a href="#middle">Yetenekler</a> <a
+                href="#section-header-two">Projeler</a> <a href="#control">İletişim</a> </div>
+    </header>
+    <div class="level" id="level">
+        <p>Senior Frontend Developer</p>
+    </div>
+    <div class="container">
+        <h1>Merhaba, Ben</h1>
+        <h1 style="margin-top: -45px; color: #ff6b9d;" id="userName">Eren Kahramanoğlu</h1>
+        <p id="userAbout">Modern web teknolojileri ile ölçeklenebilir, performanslı ve kullanıcı odaklı dijital
+            deneyimler tasarlıyor
+            ve geliştiriyorum. 5+ yıllık deneyimimle karmaşık projeleri başarıyla hayata geçiriyorum.</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Tamamlanan Proje</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Yıllık Deneyim</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Mutlu Müşteri</div>
+            </div>
+        </div>
+        <div class="buttons"> <button class="button1" onclick="location.href='#control'">İletişime Geç →</button>
+            <button class="button2" onclick="location.href='#section-header-two'">Projelerimi
+                İncele</button>
+        </div>
+    </div>
+    <div class="middle" id="middle">
+        <div class="section-header">
+            <div class="section-label">TEKNOLOJİLER</div>
+            <h2 class="section-title">Teknik Yetenekler</h2>
+            <p class="section-description">Modern yazılım geliştirme ekosisteminde geniş bir yelpazede teknoloji ve
+                araçlarla çalışıyorum.</p>
+        </div>
+        <div class="skills-container" id="skillsContainer">
+        </div>
+    </div>
+    <div class="section-header-two" id="section-header-two">
+        <div class="section-label">PORTFOLYO</div>
+        <h2 class="section-title">Öne Çıkan Projeler</h2>
+        <p class="section-description">Son yıllarda üzerinde çalıştığım ve başarıyla tamamladığım bazı önemli projeler.
+        </p>
+    </div>
+    <div class="container-two" id="projectsContainer">
+    </div>
+    <div class="section-header-two">
+        <div class="section-label">İLETİŞİM</div>
+        <h2 class="section-title">Birlikte Çalışalım</h2>
+        <p class="section-description">Projeniz için doğru çözümü birlikte bulalım. Size en kısa sürede dönüş
+            yapacağım.</p>
+    </div>
+    <div class="control" id="control">
+        <div class="box">
+            <p>📧</p>
+            <p>E-posta</p>
+            <p id="email">erenkhl55@gmail.com</p>
+        </div>
+        <div class="box">
+            <p>📱</p>
+            <p>Telefon</p>
+            <p id="phone">+90 536 145 02 26</p>
+        </div>
+        <div class="box">
+            <p>💻</p>
+            <p>GitHub</p>
+            <p id="github">erenkahramanoglu</p>
+        </div>
+        <div class="box">
+            <p>💼</p>
+            <p>LinkedIn</p>
+            <p id="linkedin">erenkahramanoglu</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2026 Eren Kahramanoğlu • Tüm hakları saklıdır</p>
+    </div>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("portfolioData"));
+
+        if (data) {
+            document.getElementById("userName").innerText = data.adsoyad;
+            document.getElementById("userAbout").innerText = data.hakkimda;
+            document.getElementById("email").innerText = data.email;
+            document.getElementById("phone").innerText = data.telefon;
+            document.getElementById("github").innerText = data.github;
+            document.getElementById("linkedin").innerText = data.linkedin;
+            document.querySelector(".level p").innerText = data.unvan;
+            document.querySelector(".footer p").innerText = data.adsoyad + " • Tüm hakları saklıdır";
+
+            const skillsContainer = document.getElementById("skillsContainer");
+
+            if (data.beceriler) {
+                const skills = data.beceriler.split(",");
+                let skillHTML = `
+                    <div class="skill-category">
+                        <h3 class="skill-category-title"><span>💻</span> Yetenekler</h3>
+                        <div class="skill-list">
+                `;
+
+                skills.forEach(function (skill) {
+                    skillHTML = skillHTML + `<span class="skill-tag">${skill.trim()}</span>`;
+                });
+
+                skillHTML = skillHTML + `
+                        </div>
+                    </div>
+                `;
+
+                skillsContainer.innerHTML = skillHTML;
+            }
+
+            const projectsContainer = document.getElementById("projectsContainer");
+
+            if (data.projeler && data.projeler.length > 0) {
+                projectsContainer.innerHTML = "";
+                data.projeler.forEach(function (proje) {
+                    let projectHTML = `
+                        <div class="mom">
+                            <div class="up">🚀</div>
+                            <div class="down">
+                                <h3 class="project-title">${proje.adi}</h3>
+                                <p class="project-description">${proje.aciklama}</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge">Teknik</span>
+                                </div>
+                                <a href="${proje.yol}" target="_blank" class="project-link">Detayları İncele →</a>
+                            </div>
+                        </div>
+                    `;
+                    projectsContainer.innerHTML = projectsContainer.innerHTML + projectHTML;
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

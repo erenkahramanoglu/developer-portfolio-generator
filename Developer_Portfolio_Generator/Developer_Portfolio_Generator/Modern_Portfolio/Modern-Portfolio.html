@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url(image.png)center/cover no-repeat;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .up {
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);
+            backdrop-filter: saturate(180%) blur(5px);
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            height: auto;
+            padding: 30px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 26px;
+            margin: auto;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .up:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(82, 183, 136, 0.5);
+        }
+
+        .up h1 {
+            font-size: 56px;
+            color: #99d1b8;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .up h3 {
+            font-size: 28px;
+            color: #52b788;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .up p {
+            font-size: 18px;
+            color: antiquewhite;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .hakkimda {
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+
+        .buttons {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            width: 60%;
+            margin: auto;
+        }
+
+        .buttons a {
+            display: flex;
+            text-decoration: none;
+            color: #fff;
+            width: 130px;
+            height: 50px;
+            background-color: blueviolet;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(82, 183, 136, 0.3);
+            border-radius: 100px;
+
+            text-align: center;
+            word-break: break-word;
+            padding: 0 15px;
+        }
+
+        .buttons a:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(82, 183, 136, 0.5);
+        }
+
+        .middle {
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);
+            backdrop-filter: saturate(180%) blur(5px);
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            border-radius: 26px;
+            margin: auto;
+            transition: all 0.3s ease;
+        }
+
+        .middle:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(82, 183, 136, 0.5);
+        }
+
+        .middle h2 {
+            color: #52b788;
+            margin-bottom: 30px;
+            font-size: 36px;
+            border-bottom: 4px solid #52b788;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .middle p {
+            font-size: 18px;
+            color: antiquewhite;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .middle-two {
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);
+            backdrop-filter: saturate(180%) blur(5px);
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            border-radius: 26px;
+            margin: auto;
+            transition: all 0.3s ease;
+        }
+
+        .middle-two:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(82, 183, 136, 0.5);
+        }
+
+        .middle-two h2 {
+            color: #52b788;
+            margin-bottom: 30px;
+            font-size: 36px;
+            border-bottom: 4px solid #52b788;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #52b788, #40916c);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(82, 183, 136, 0.3);
+            word-break: break-word;
+            text-align: center;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(82, 183, 136, 0.5);
+        }
+
+
+        .down {
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);
+            backdrop-filter: saturate(180%) blur(5px);
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            border-radius: 26px;
+            margin: auto;
+            transition: all 0.3s ease;
+        }
+
+        .down:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(82, 183, 136, 0.5);
+        }
+
+        .down h2 {
+            color: #52b788;
+            margin-bottom: 30px;
+            font-size: 36px;
+            border-bottom: 4px solid #52b788;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #52b788;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(82, 183, 136, 0.5);
+        }
+
+        .project-card p {
+            line-height: 1.6;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            word-break: break-word;
+        }
+
+
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            display: flex;
+            width: 25%;
+            margin: auto;
+            border-radius: 120px;
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .up,
+        .middle,
+        .middle-two,
+        .down {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .up {
+            animation-delay: 0.2s;
+        }
+
+        .middle {
+            animation-delay: 0.4s;
+        }
+
+        .middle-two {
+            animation-delay: 0.6s;
+        }
+
+        .down {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .up {
+                width: 95%;
+                height: auto;
+                padding: 30px 20px;
+            }
+
+            .up h1 {
+                font-size: 36px;
+            }
+
+            .up h3 {
+                font-size: 22px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .buttons a {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .middle-two {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                width: 90%;
+                padding: 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .middle {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .middle h2 {
+                font-size: 28px;
+            }
+
+            .middle p {
+                font-size: 16px;
+            }
+
+            .middle-two {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .down {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="up">
+        <h1 class="adsoyad">Eren Kahramanoğlu</h1>
+        <h3 id="unvan">Frontend Developer</h3>
+        <p class="hakkimda">Merhaba! Ben Eren, modern web teknolojileri ile kullanıcı dostu ve etkileyici web
+            uygulamaları
+            geliştiren tutkulu bir frontend developer'ım.</p>
+
+        <div class="buttons">
+            <a href="mailto:" id="email" target="_blank">📧 E-posta</a>
+            <a href="tel:" id="telefon" target="_blank">📱 Telefon</a>
+            <a href="" id="github" target="_blank">💻 GitHub</a>
+            <a href="" id="linkedin" target="_blank">💼 LinkedIn</a>
+        </div>
+    </div>
+    <br>
+    <div class="middle">
+        <h2>👤 Hakkımda</h2>
+        <p class="hakkimda">5 yıldır web geliştirme alanında çalışıyorum. Modern JavaScript framework'leri ve responsive
+            tasarım
+            konusunda uzmanım.Kullanıcı deneyimini ön planda tutarak, performanslı ve erişilebilir web
+            uygulamaları
+            geliştirmeyi seviyorum. Sürekli kendimi geliştirmeye ve yeni teknolojileri öğrenmeye açık biriyim.</p>
+    </div>
+    <br>
+    <div class="middle-two">
+        <h2>💡 Yetenekler</h2>
+        <div class="skills-grid" id="skills">
+            <!-- <div class="skill-item">HTML5</div>
+            <div class="skill-item">CSS3</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">React</div> -->
+            <!-- <div class="skill-item">Vue.js</div>
+            <div class="skill-item">Node.js</div>
+            <div class="skill-item">Tailwind CSS</div>
+            <div class="skill-item">Git</div>
+            <div class="skill-item">Responsive Design</div>
+            <div class="skill-item">UI/UX</div> -->
+        </div>
+    </div>
+    <br>
+    <div class="down">
+        <h2>🚀 Projeler</h2>
+        <div class="projects-grid" id="projects-grid">
+            <div class="project-card">
+                <h3 id="projeadi">E-Ticaret Platformu</h3>
+                <a href="" id="projeyol" target="_blank" class="project-link">🔗 Projeyi Görüntüle</a>
+                <p id="projeaciklama">React ve Node.js kullanarak geliştirdiğim tam kapsamlı bir e-ticaret platformu.
+                    Ödeme entegrasyonu,
+                    sepet yönetimi ve admin paneli içerir.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Portfolio Generator</h3>
+                <a href="https://example.com/proje2" target="_blank" class="project-link">🔗 Projeyi Görüntüle</a>
+                <p>Kullanıcıların kolayca kişisel portfolyo siteleri oluşturabilecekleri bir web uygulaması. Farklı
+                    temalar ve özelleştirme seçenekleri sunar.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Hava Durumu Uygulaması</h3>
+                <a href="https://example.com/proje3" target="_blank" class="project-link">🔗 Projeyi Görüntüle</a>
+                <p>OpenWeather API kullanarak gerçek zamanlı hava durumu verilerini gösteren, modern ve kullanıcı dostu
+                    bir uygulama.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Task Management Tool</h3>
+                <a href="https://example.com/proje4" target="_blank" class="project-link">🔗 Projeyi Görüntüle</a>
+                <p>Takımların projelerini organize etmesine yardımcı olan, drag & drop özellikli görev yönetim aracı.
+                    Vue.js ile geliştirildi.</p>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="footer">
+        <p>© 2026
+        <p class="adsoyad"> Eren Korkmaz</p> - Tüm hakları saklıdır</p>
+    </div>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("portfolioData"));
+
+        if (data) {
+            document.querySelectorAll(".adsoyad").forEach(el => {
+                el.innerText = data.adsoyad;
+            });
+
+            document.getElementById("unvan").innerText = data.unvan;
+            document.querySelectorAll(".hakkimda").forEach(el => {
+                el.innerText = data.hakkimda;
+            });
+
+            document.getElementById("email").href = "mailto:" + data.email;
+            document.getElementById("telefon").href = "tel:" + data.telefon;
+            document.getElementById("github").href = data.github;
+            document.getElementById("linkedin").href = data.linkedin;
+
+            const projectsGrid = document.getElementById("projects-grid");
+
+            if (data.projeler && data.projeler.length > 0) {
+                projectsGrid.innerHTML = "";
+                data.projeler.forEach(function (proje) {
+                    let kartHTML = `
+                        <div class="project-card">
+                            <h3>${proje.adi}</h3>
+                            <a href="${proje.yol}" target="_blank" class="project-link">🔗 Projeyi Görüntüle</a>
+                            <p>${proje.aciklama}</p>
+                        </div>
+                    `;
+                    projectsGrid.innerHTML = projectsGrid.innerHTML + kartHTML;
+                });
+            } else {
+                document.querySelector(".down").style.display = "none";
+            }
+
+            const skillsContainer = document.getElementById("skills");
+
+            if (skillsContainer && data.beceriler) {
+                skillsContainer.innerHTML = "";
+                data.beceriler.split(",").forEach(skill => {
+                    const div = document.createElement("div");
+                    div.className = "skill-item";
+                    div.innerText = skill.trim();
+                    skillsContainer.appendChild(div);
+                });
+            }
+
+        }
+    </script>
+</body>
+
+</html>

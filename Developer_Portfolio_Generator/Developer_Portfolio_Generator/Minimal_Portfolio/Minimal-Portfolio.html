@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        body {
+            background-color: #fafafa;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 80px 60px;
+            border-radius: 10px;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .up {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .up h1 {
+            font-size: 64px;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .up h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #a3a3a3;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .up p {
+            font-size: 17px;
+            color: #525252;
+            line-height: 1.9;
+            max-width: 700px;
+        }
+
+        .communication {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 32px;
+            margin-left: 0;
+            justify-content: space-around;
+        }
+
+        .communication a {
+            color: #404040;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            position: relative;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .communication a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #1a1a1a;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .communication a:hover {
+            color: #1a1a1a;
+        }
+
+        .communication a:hover::after {
+            width: 100%;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            width: 100%;
+            padding: 20px;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #a3a3a3;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .middle p {
+            font-size: 17px;
+            color: #525252;
+            line-height: 1.9;
+            max-width: 700px;
+        }
+
+        .middle-two {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            display: flex;
+            font-size: 15px;
+            color: #525252;
+            padding: 10px 20px;
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            justify-content: center;
+            align-items: center;
+            font-weight: 400;
+        }
+
+        .skill:hover {
+            background: #f5f5f5;
+            border-color: #d4d4d4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .title {
+            display: block;
+            width: 100%;
+        }
+
+        .down {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project {
+            margin-bottom: 56px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project p {
+            font-size: 16px;
+            color: #525252;
+            line-height: 1.8;
+            margin-top: 12px;
+        }
+
+        .project h3 {
+            font-size: 22px;
+            font-weight: 500;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project:hover {
+            transform: translateX(8px);
+        }
+
+        .project-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .project-header a {
+            font-size: 14px;
+            margin-top: 22px;
+            margin-right: 10px;
+            color: #737373;
+            text-decoration: none;
+            white-space: nowrap;
+            position: relative;
+            transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #a3a3a3;
+        }
+
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        * {
+            min-width: 0;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        span,
+        a,
+        div {
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        .project-header,
+        .communication {
+            min-width: 0;
+        }
+
+        .up,
+        .middle,
+        .middle-two,
+        .down {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .up {
+            animation-delay: 0.2s;
+        }
+
+        .middle {
+            animation-delay: 0.4s;
+        }
+
+        .middle-two {
+            animation-delay: 0.6s;
+        }
+
+        .down {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .up {
+                width: 95%;
+                height: auto;
+                padding: 30px 20px;
+            }
+
+            .up h1 {
+                font-size: 36px;
+            }
+
+            .up h3 {
+                font-size: 22px;
+            }
+
+            .communication {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .communication a {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .middle-two {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .middle-two {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .middle {
+                padding: 20px 0;
+            }
+
+            .middle h4 {
+                font-size: 18px;
+            }
+
+            .middle p {
+                font-size: 16px;
+            }
+
+            .skill {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .project {
+                margin-bottom: 40px;
+                padding-bottom: 30px;
+            }
+
+            .project h3 {
+                font-size: 18px;
+            }
+
+            .project p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br><br><br><br>
+    <div class="container">
+        <div class="up">
+            <h1>Eren Kahramanoğlu</h1>
+            <h3>Frontend Developer</h3>
+            <br>
+            <p id="hakkimda">Merhaba! Ben Eren, modern web teknolojileri ile kullanıcı dostu ve etkileyici web
+                uygulamaları geliştiren
+                tutkulu bir frontend developer'ım.</p>
+            <div class="communication">
+                <a href="mailto:" id="email">erenkhl55@gmail.com</a>
+                <a href="tel:" id="telefon">+90 539 215 05 92</a>
+                <a href="" id="github" target="_blank">GitHub</a>
+                <a href="" id="linkedin" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <br>
+        <div class="middle">
+            <h4>Hakkımda</h4>
+            <p>5 yıldır web geliştirme alanında çalışıyorum. Modern JavaScript framework'leri ve responsive tasarım
+                konusunda uzmanım. Kullanıcı deneyimini ön planda tutarak, performanslı ve erişilebilir web uygulamaları
+                geliştirmeyi seviyorum. Sürekli kendimi geliştirmeye ve yeni teknolojileri öğrenmeye açık biriyim.</p>
+        </div>
+        <br><br><br>
+        <div class="middle-two" id="skillsContainer">
+            <div class="title">
+                <h4>Yetenekler</h4>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="down" id="projectsSection">
+            <h4>Projeler</h4>
+            <div id="projectsContainer"></div>
+        </div>
+        <br>
+        <hr>
+        <div class="footer">
+            <p>© 2026 Eren Kahramanoğlu</p>
+        </div>
+    </div>
+    <br><br><br><br>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("portfolioData"));
+
+        if (data) {
+            document.querySelector(".up h1").innerText = data.adsoyad;
+            document.querySelector(".up h3").innerText = data.unvan;
+            document.querySelector(".communication #email").innerText = data.email;
+            document.querySelector(".communication #telefon").innerText = data.telefon;
+            document.querySelector(".communication #github").innerText = data.github;
+            document.querySelector(".communication #linkedin").innerText = data.linkedin;
+            document.querySelector(".middle p").innerText = data.hakkimda;
+            document.querySelector(".up p").innerText = data.hakkimda;
+            document.querySelector(".footer p").innerText = data.adsoyad + " | Minimalist Portföy ✨";
+
+            document.getElementById("email").href = "mailto:" + data.email;
+            document.getElementById("telefon").href = "tel:" + data.telefon;
+            document.getElementById("github").href = data.github;
+            document.getElementById("linkedin").href = data.linkedin;
+
+            const skillsContainer = document.getElementById("skillsContainer");
+
+            if (data.beceriler) {
+                const skillsTitle = skillsContainer.querySelector(".title");
+                skillsContainer.innerHTML = "";
+                skillsContainer.appendChild(skillsTitle);
+
+                data.beceriler.split(",").forEach(function (skill) {
+                    const span = document.createElement("span");
+                    span.className = "skill";
+                    span.innerText = skill.trim();
+                    skillsContainer.appendChild(span);
+                });
+            }
+
+            const projectsContainer = document.getElementById("projectsContainer");
+
+            if (data.projeler && data.projeler.length > 0) {
+                projectsContainer.innerHTML = "";
+                data.projeler.forEach(function (proje) {
+                    const div = document.createElement("div");
+                    div.className = "project";
+                    div.innerHTML = `
+                        <div class="project-header">
+                            <h3>${proje.adi}</h3>
+                            <a href="${proje.yol}" target="_blank">Görüntüle</a>
+                        </div>
+                        <p>${proje.aciklama}</p>
+                    `;
+                    projectsContainer.appendChild(div);
+                });
+            } else {
+                document.getElementById("projectsSection").style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

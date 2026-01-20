@@ -72,20 +72,6 @@ This approach improves user experience without requiring a backend.
 
 ---
 
-## 📸 Screenshots
-
-### 🏠 Generator Home Page
-![Generator Home](Ekran görüntüsü 2026-01-20 183553.png)
-
-### 🎨 Creative Portfolio
-![Creative Portfolio](Ekran görüntüsü 2026-01-20 183625.png)
-
-### ✨ Minimal Portfolio
-![Minimal Portfolio](Ekran görüntüsü 2026-01-20 183711.png)
-
-### 💼 Professional Portfolio
-![Professional Portfolio](Ekran görüntüsü 2026-01-20 183744.png)
-
 
 
 ## 🚀 Live Demo

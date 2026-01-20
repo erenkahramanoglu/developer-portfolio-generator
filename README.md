@@ -74,9 +74,10 @@ This approach improves user experience without requiring a backend.
 
 
 
-## 🚀 Live Demo
+## 🚀 Live Demo (Temporary)
 
-👉 **[View Live Demo](https://erenkahramanoglu.github.io/developer-portfolio-generator/)**  
+👉 https://raw.githack.com/erenkahramanoglu/developer-portfolio-generator/c73ead1830e69ac1257d9f7aa451e2906536fbc3/Developer_Portfolio_Generator/Developer_Portfolio_Generator/Home/index.html
+
 
 ---
 

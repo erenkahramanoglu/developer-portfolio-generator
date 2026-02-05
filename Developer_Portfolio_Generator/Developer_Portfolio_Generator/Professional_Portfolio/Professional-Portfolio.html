@@ -579,7 +579,60 @@
                 font-size: 14px;
                 padding: 20px;
             }
+        }
 
+        
+
+        .upp,
+        .level,
+        .container,
+        .middle,
+        .section-header-two,
+        .container-two,
+        .control,
+        .footer {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .upp {
+            animation-delay: 0.2s;
+        }
+
+        .level {
+            animation-delay: 0.4s;
+        }
+
+        .middle {
+            animation-delay: 0.6s;
+        }
+
+        .section-header-two {
+            animation-delay: 0.8s;
+        }
+
+        .container-two {
+            animation-delay: 1.0s;
+        }
+
+        .control {
+            animation-delay: 1.2s;
+        }
+
+        .footer {
+            animation-delay: 1.4s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -727,5 +780,6 @@
         }
     </script>
 </body>
+
 
 </html>
